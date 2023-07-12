@@ -1,0 +1,14 @@
+@import '../../assets/css/weathericons.css';
+
+
+.title{
+
+    background-color: #7E57C2;
+    margin: 10px 100px; 
+    text-align: center;
+}
+
+.current-temperature, div {
+    text-align: center;
+
+}

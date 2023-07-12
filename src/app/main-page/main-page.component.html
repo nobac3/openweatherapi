@@ -1,0 +1,49 @@
+<div>
+    <div>
+        Sélectionner votre ville
+    </div>
+    <select #selectElem (change)="getWeather(selectElem.value)">
+        <option *ngFor='let frenchCity of frenchCities'>
+            {{frenchCity.nm}}
+        </option>
+    </select>
+
+</div>
+
+<div class='title'>
+
+    <span>{{frenchCity.nm}}</span>
+
+</div>
+
+<div class='current-temperature'>
+    <span>{{weather.main.temp}}°</span>
+    <span class="wi wi-icon-{{weather.weather[0].id}}"></span>
+</div>
+
+<div>
+
+
+    <div class="container" *ngFor='let weather of weatherForecast'>
+
+        <div class="row" >
+            
+          <div class="col title">
+            {{weather.dt_txt  | date:'EEE'}}
+          </div>
+
+          <div class="col">
+            <span class="wi wi-icon-{{weather.weather[0].id}}"></span>
+          </div>
+
+          <div class="col">
+            {{weather.main.temp_max}}°
+          </div>
+
+          <div class="col">
+            {{weather.main.temp_min}}°
+          </div>
+
+        </div>
+      </div>
+</div>
